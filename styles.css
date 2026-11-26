@@ -1,37 +1,75 @@
 :root {
-    /* CSS HEX */
---turquoise: #6ee6c7ff;
---lavender-mist: #f8f1ffff;
-/* --thistle: #decdf5ff; */
---prussian-blue: #031d44ff;
---dim-grey: #676767ff;
+  /* CSS HEX */
+  --turquoise: #6ee6c7;
+  --lavender-mist: #f8f1ffff;
+  /* --thistle: #decdf5ff; */
+  --prussian-blue: #031d44ff;
+  --dim-grey: #676767ff;
 
-/* CSS HSL */
---turquoise: hsla(165, 71%, 67%, 1);
---lavender-mist: hsla(270, 100%, 97%, 1);
-/* --thistle: hsla(266, 67%, 88%, 1); */
---prussian-blue: hsla(216, 92%, 14%, 1);
---dim-grey: hsla(0, 0%, 40%, 1);
-
+  /* CSS HSL */
+  --turquoise: hsla(165, 71%, 67%, 1);
+  --lavender-mist: hsla(270, 100%, 97%, 1);
+  /* --thistle: hsla(266, 67%, 88%, 1); */
+  --prussian-blue: hsla(216, 92%, 14%, 1);
+  --dim-grey: hsla(0, 0%, 40%, 1);
 }
 /* 1. Include padding and borders inside element widths */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+.mission-statement {
+  font-size: 1.5rem;
+  /* font-style: oblique; */
+  font-weight: 900;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 2rem 0;
+  padding: 1rem;
+  background-color: var(--turquoise);
+  color: var(--prussian-blue);
+  font-family: "Fraunces", serif;
+  border-top: 1.5px solid var(--prussian-blue);
+  border-bottom: 1.5px solid var(--prussian-blue);
+}
 /* 2. Remove default browser margins and padding */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden; /* Prevents horizontal scroll gaps */
 }
 
+h1 {
+  font-size: 2rem;
+  font-family: "Fraunces", serif;
+}
+p {
+  font-size: 1rem;
+  font-family: "Merriweather", serif;
+  margin: 0 1rem;
+}
+
+figure img,
+picture img {
+  max-width: 100%;
+  display: block;
+  margin-inline: auto;
+  border-radius: 10px;
+  border: 1rem solid var(--lavender-mist);
+}
+
+figure {
+  text-align: center;
+}
 /* 3. Remove baseline gaps under images */
-img {
+/* img {
   display: block;
   max-width: 100%;
-}
+} */
 
 .skip-link {
   position: absolute;
@@ -55,42 +93,127 @@ img {
   text-decoration: none;
 }
 
-body{
-    font-family: "Karla";
+body {
+  font-family: "Merriweather", serif;
 }
 
-header{
-    display:flex;
-    width:100%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--prussian-blue);
-    padding: 1rem 2rem;
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--prussian-blue);
+  padding: 1rem 1rem;
 }
 
-.logo{
-    width:10%;
+.logo {
+  width: 20%;
+  border-radius: 10%;
 }
 
 ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    padding:0;
-    margin:0;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 a.nav-link {
-    color:white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-.flex-center-col{
+footer {
+  background-color: var(--turquoise);
+  /* color: #fff; */
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1.5px solid var(--prussian-blue);
+}
+footer a {
+  color: var(--prussian-blue);
+  text-decoration: none;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+.flex-center-col {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-main img{
+/* main img {
   width: 70%;
+} */
+
+form {
+  width: 80%;
+  text-align: left;
+}
+
+section,
+main {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- Audio player ---------- */
+audio {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: 54px;
+  margin: 2rem auto;
+  border: 2px solid var(--prussian-blue);
+  border-radius: 999px;
+  background-color: var(--turquoise);
+  box-shadow: 0 4px 16px rgba(3, 29, 68, 0.12);
+  transition: box-shadow 0.2s ease;
+}
+
+audio:hover {
+  box-shadow: 0 6px 20px rgba(3, 29, 68, 0.2);
+}
+
+audio:focus-visible {
+  outline: 3px solid var(--prussian-blue);
+  outline-offset: 3px;
+}
+
+@media (min-width: 700px) {
+  audio {
+    width: 100%;
+  }
+  .logo {
+    width: 10%;
+  }
+  figure img,
+  picture img {
+    max-width: 70%;
+    display: block;
+    margin-inline: auto;
+  }
+  p {
+    font-size: 1.2rem;
+    width: 70%;
+  }
+  .mission-statement {
+    /* font-size: 2rem; */
+    width: 100%;
+  }
+  a.nav-link {
+    font-size: 1.2rem;
+  }
 }

@@ -1,0 +1,174 @@
+/* ---------- Colors ---------- */
+:root {
+  --turquoise: #6ee6c7;
+  --lavender-mist: #f8f1ff;
+  /* --thistle: #decdf5; */
+  --prussian-blue: #031d44;
+  --dim-grey: #676767;
+
+  --turquoise-dark: #3fcfab; /* hover state for turquoise */
+  --white: #ffffff;
+}
+
+/* ---------- Form container ---------- */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--lavender-mist);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(3, 29, 68, 0.12);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: var(--prussian-blue);
+  box-sizing: border-box;
+}
+
+form *,
+form *::before,
+form *::after {
+  box-sizing: inherit;
+}
+
+/* The markup uses <br> for spacing; margins handle that now */
+form br {
+  display: none;
+}
+
+/* ---------- Fieldsets & legends ---------- */
+fieldset {
+  margin: 0 0 1.5rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 2px solid var(--turquoise);
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+legend {
+  padding: 0.25rem 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--prussian-blue);
+  background-color: var(--turquoise);
+  border-radius: 999px;
+}
+
+/* ---------- Labels ---------- */
+label,
+lable {
+  /* "lable" covers the typo in the Short Message label; fix it in the HTML and remove this */
+  display: block;
+  margin: 1rem 0 0.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--prussian-blue);
+}
+
+fieldset > label:first-of-type {
+  margin-top: 0.25rem;
+}
+
+/* ---------- Inputs, select, textarea ---------- */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  color: var(--prussian-blue);
+  background-color: var(--lavender-mist);
+  border: 1.5px solid var(--dim-grey);
+  border-radius: 8px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--dim-grey);
+}
+
+/* Hover */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--prussian-blue);
+}
+
+/* Focus (visible for keyboard users) */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background-color: var(--white);
+  border-color: var(--prussian-blue);
+  box-shadow: 0 0 0 4px rgba(110, 230, 199, 0.55);
+}
+
+/* Only flag invalid fields after the user has interacted */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: #b3261e;
+}
+
+/* ---------- Submit button ---------- */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: var(--prussian-blue);
+  background-color: var(--turquoise);
+  border: 2px solid var(--prussian-blue);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--prussian-blue);
+  color: var(--turquoise);
+}
+
+input[type="submit"]:focus-visible {
+  outline: 3px solid var(--prussian-blue);
+  outline-offset: 3px;
+}
+
+input[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Larger screens: put first/last name side by side is optional;
+   keep it simple and just give the form more breathing room ---------- */
+@media (min-width: 700px) {
+  form {
+    padding: 2rem;
+  }
+}
+
+/* ---------- Respect reduced-motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

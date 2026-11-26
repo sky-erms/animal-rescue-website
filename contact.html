@@ -5,34 +5,52 @@
 
  -->
 
- <!DOCTYPE html>
- <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact | Twin Cities Animal Rescue</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <a href="#main-content" class="skip-link">Skip to main content</a>
-        <header>
-            <img class = "logo" src="assets/images/rescue-logo_c.png" alt="Twin Cities Animal Rescue logo which has a cartoon dog that is shaped like a house and the name of the rescue at the bottom">
-            <nav>
-                <ul>
-                    <li><a class="nav-link" href="index.html">Home</a></li>
-                    <li><a class="nav-link" href="about.html">About</a></li>
-                    <li><a class="nav-link" href="services.html">Services</a></li>
-                    <li><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main id="main-content" class="flex-center-col">
-         <section id="interest-form">
-            <img src="assets/images/rescue-volunteer_c.png"  alt="a volunteer looking at and kneeling beside a dog smiling at the camera">
-            <!-- The form should collect:
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Twin Cities Animal Rescue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+      <img
+        class="logo"
+        src="assets/images/rescue-logo_c.png"
+        alt="Twin Cities Animal Rescue logo which has a cartoon dog that is shaped like a house and the name of the rescue at the bottom"
+      />
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="flex-center-col">
+      <section id="interest-form">
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="assets/images/rescue-volunteer_c.png"
+          />
+          <img
+            class="adaptive-img"
+            src="assets/images/rescue-volunteer_c.png"
+            alt="a volunteer looking at and kneeling beside a dog smiling at the camera"
+          />
+        </picture>
+        <!-- The form should collect:
             •	Name
             •	Email
             •	Interest type, such as volunteer, foster, or adoption information
@@ -40,44 +58,75 @@
             •	Experience with pets
             •	Short message
             -->
-            <h1>Volunteer or foster interest form</h1>
-            <form>
-               <fieldset>
-                  <legend>Profile</legend>
-                  <label for="firstName">First Name:</label>
-                  <input type="text" id="fistName" name="firstName"> <br>
-                  <label for="lastName">Last Name:</label>
-                  <input type="text" id="lastName" name="lastName"><br>
-                  <label for="emailAddress" required>Email address:</label>
-                  <input type="email" id="emailAddress" name="email">
-               </fieldset>
-               <fieldset>
-                  <legend>Participation Preferences</legend>
-                  <label for="interestType">Interest Type: </label>
-                  <select id="interestType" name="interestType">
-                     <option value="">--  Please chose an option --</option>
-                     <option value="volunteer">Volunteer</option>
-                     <option value="foster">Foster</option>
-                     <option value="adoption">Adoption</option>
-                  </select><br>
-                  <label for="availability">Availability: </label>
-                  <input type="date" id="availability" name="availability"><br>
-                  <label for="experience">Experience: </label><br>
-                  <textarea id="experience" name="experience" rows="4" cols="50"></textarea><br>
-                  <lable for="shortMsg">Short Message</lable><br>
-                  <textarea id="shortMsg" name="shortMsg" rows="4" cols="50"></textarea>
-               </fieldset>
-            </form>
-         </section>
-			<section id="service-area">
-            <h2>Service Area</h2>
-         </section>
-         <section id="office-hours">
-            <h2>Office Hours</h2>
-         </section>
-		</main>
-		<footer>
-			
-		</footer>
- </body>
- </html>
+        <h1>Volunteer or foster interest form</h1>
+        <form>
+          <fieldset>
+            <legend>Profile</legend>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="fistName" name="firstName" required /> <br />
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required /><br />
+            <label for="emailAddress" required>Email address:</label>
+            <input type="email" id="emailAddress" name="email" required />
+          </fieldset>
+          <fieldset>
+            <legend>Participation Preferences</legend>
+            <label for="interestType">Interest Type: </label>
+            <select id="interestType" name="interestType" required>
+              <option value="">-- Please chose an option --</option>
+              <option value="volunteer">Volunteer</option>
+              <option value="foster">Foster</option>
+              <option value="adoption">Adoption</option></select
+            ><br />
+            <label for="availability">Availability: </label>
+            <input
+              type="date"
+              id="availability"
+              name="availability"
+              required
+            /><br />
+            <label for="experience">Experience: </label><br />
+            <textarea
+              id="experience"
+              name="experience"
+              rows="4"
+              cols="30"
+            ></textarea
+            ><br />
+            <lable for="shortMsg">Short Message</lable><br />
+            <textarea
+              id="shortMsg"
+              name="shortMsg"
+              rows="4"
+              cols="30"
+            ></textarea>
+          </fieldset>
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+      <section id="service-area">
+        <h2>Service Area</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
+          consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
+          quisque faucibus ex sapien vitae pellentesque.
+        </p>
+      </section>
+      <section id="office-hours">
+        <h2>Office Hours</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
+          consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
+          quisque faucibus ex sapien vitae pellentesque.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
