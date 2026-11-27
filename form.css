@@ -13,8 +13,8 @@
 /* ---------- Form container ---------- */
 form {
   max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
+  margin: 0;
+  padding: 1rem;
   background-color: var(--lavender-mist);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(3, 29, 68, 0.12);
@@ -27,11 +27,6 @@ form *,
 form *::before,
 form *::after {
   box-sizing: inherit;
-}
-
-/* The markup uses <br> for spacing; margins handle that now */
-form br {
-  display: none;
 }
 
 /* ---------- Fieldsets & legends ---------- */
@@ -53,9 +48,7 @@ legend {
 }
 
 /* ---------- Labels ---------- */
-label,
-lable {
-  /* "lable" covers the typo in the Short Message label; fix it in the HTML and remove this */
+label {
   display: block;
   margin: 1rem 0 0.35rem;
   font-weight: 600;
