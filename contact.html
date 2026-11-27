@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="form.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -64,11 +65,19 @@
             <legend>Profile</legend>
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required />
-            <br />
+            <span class="error" id="firstName-error" aria-live="polite"></span>
+
             <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required /><br />
+            <input type="text" id="lastName" name="lastName" required />
+            <span class="error" id="lastName-error" aria-live="polite"></span>
+
             <label for="emailAddress" required>Email address:</label>
             <input type="email" id="emailAddress" name="email" required />
+            <span
+              class="error"
+              id="emailAddress-error"
+              aria-live="polite"
+            ></span>
           </fieldset>
           <fieldset>
             <legend>Participation Preferences</legend>
@@ -77,8 +86,8 @@
               <option value="">-- Please choose an option --</option>
               <option value="volunteer">Volunteer</option>
               <option value="foster">Foster</option>
-              <option value="adoption">Adoption</option></select
-            ><br />
+              <option value="adoption">Adoption</option>
+            </select>
             <span
               class="error"
               id="interestType-error"
@@ -86,20 +95,20 @@
             ></span>
             <div id="infoPanel" aria-live="polite"></div>
             <label for="availability">Availability: </label>
-            <input
-              type="date"
-              id="availability"
-              name="availability"
-              required
-            /><br />
+            <input type="date" id="availability" name="availability" required />
+            <span
+              class="error"
+              id="availability-error"
+              aria-live="polite"
+            ></span>
             <label for="experience">Experience: </label><br />
             <textarea
               id="experience"
               name="experience"
               rows="4"
               cols="30"
-            ></textarea
-            ><br />
+            ></textarea>
+            <span class="error" id="experience-error" aria-live="polite"></span>
             <label for="shortMsg">Short Message</label><br />
             <textarea
               id="shortMsg"
@@ -108,6 +117,7 @@
               cols="30"
             ></textarea>
             <span class="hint" id="counter">0 / 200</span>
+            <span class="error" id="shortMsg-error" aria-live="polite"></span>
           </fieldset>
           <input id="submit-btn" type="submit" value="Submit" />
         </form>
