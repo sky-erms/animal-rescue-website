@@ -59,11 +59,12 @@
             •	Short message
             -->
         <h1>Volunteer or foster interest form</h1>
-        <form>
+        <form id="signupForm" novalidate>
           <fieldset>
             <legend>Profile</legend>
             <label for="firstName">First Name:</label>
-            <input type="text" id="fistName" name="firstName" required /> <br />
+            <input type="text" id="firstName" name="firstName" required />
+            <br />
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required /><br />
             <label for="emailAddress" required>Email address:</label>
@@ -73,11 +74,17 @@
             <legend>Participation Preferences</legend>
             <label for="interestType">Interest Type: </label>
             <select id="interestType" name="interestType" required>
-              <option value="">-- Please chose an option --</option>
+              <option value="">-- Please choose an option --</option>
               <option value="volunteer">Volunteer</option>
               <option value="foster">Foster</option>
               <option value="adoption">Adoption</option></select
             ><br />
+            <span
+              class="error"
+              id="interestType-error"
+              aria-live="polite"
+            ></span>
+            <div id="infoPanel" aria-live="polite"></div>
             <label for="availability">Availability: </label>
             <input
               type="date"
@@ -93,16 +100,19 @@
               cols="30"
             ></textarea
             ><br />
-            <lable for="shortMsg">Short Message</lable><br />
+            <label for="shortMsg">Short Message</label><br />
             <textarea
               id="shortMsg"
               name="shortMsg"
               rows="4"
               cols="30"
             ></textarea>
+            <span class="hint" id="counter">0 / 200</span>
           </fieldset>
           <input id="submit-btn" type="submit" value="Submit" />
         </form>
+        <div id="confirmation" aria-live="polite"></div>
+        <section id="dashboard"></section>
       </section>
       <section id="service-area">
         <h2>Service Area</h2>
