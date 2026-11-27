@@ -1,19 +1,10 @@
 :root {
   /* CSS HEX */
   --turquoise: #6ee6c7;
-  --lavender-mist: #f8f1ffff;
-  /* --thistle: #decdf5ff; */
-  --prussian-blue: #031d44ff;
-  --dim-grey: #676767ff;
-
-  /* CSS HSL */
-  --turquoise: hsla(165, 71%, 67%, 1);
-  --lavender-mist: hsla(270, 100%, 97%, 1);
-  /* --thistle: hsla(266, 67%, 88%, 1); */
-  --prussian-blue: hsla(216, 92%, 14%, 1);
-  --dim-grey: hsla(0, 0%, 40%, 1);
+  --lavender-mist: #f8f1ff;
+  --prussian-blue: #031d44;
 }
-/* 1. Include padding and borders inside element widths */
+
 *,
 *::before,
 *::after {
@@ -30,7 +21,7 @@
   padding: 1rem;
   background-color: var(--turquoise);
   color: var(--prussian-blue);
-  font-family: "Fraunces", serif;
+  font-family: "Merriweather", serif;
   border-top: 1.5px solid var(--prussian-blue);
   border-bottom: 1.5px solid var(--prussian-blue);
 }
@@ -65,11 +56,6 @@ picture img {
 figure {
   text-align: center;
 }
-/* 3. Remove baseline gaps under images */
-/* img {
-  display: block;
-  max-width: 100%;
-} */
 
 .skip-link {
   position: absolute;
@@ -150,10 +136,6 @@ footer ul {
   align-items: center;
   flex-direction: column;
 }
-
-/* main img {
-  width: 70%;
-} */
 
 form {
   width: 80%;
