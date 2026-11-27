@@ -154,6 +154,13 @@ input[type="submit"]:active {
   transform: scale(0.98);
 }
 
+.error {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #b3261e;
+}
+
 /* ---------- Larger screens: put first/last name side by side is optional;
    keep it simple and just give the form more breathing room ---------- */
 @media (min-width: 700px) {
