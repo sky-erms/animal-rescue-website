@@ -18,12 +18,7 @@ form {
   background-color: var(--lavender-mist);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(3, 29, 68, 0.12);
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: "Merriweather", serif;
   color: var(--prussian-blue);
   box-sizing: border-box;
 }
@@ -50,7 +45,7 @@ fieldset {
 
 legend {
   padding: 0.25rem 0.9rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--prussian-blue);
   background-color: var(--turquoise);
@@ -86,6 +81,7 @@ textarea {
   background-color: var(--lavender-mist);
   border: 1.5px solid var(--dim-grey);
   border-radius: 8px;
+  font-size: 0.8rem;
 }
 
 textarea {
