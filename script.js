@@ -71,6 +71,7 @@ function loadSignups() {
     return [];
   }
 }
+
 // ---------- Validation ----------
 // Each validator returns an error message, or "" when the value is valid.
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -130,3 +131,37 @@ function validateField(name) {
   showError(name, message);
   return message === "";
 }
+
+// ---------- Dynamic behavior ----------
+// Selection: update info panel + Experience placeholder.
+fields.interestType.addEventListener("change", () => {
+  const p = interestTypeInfo[fields.interestType.value];
+  if (p) {
+    infoPanel.innerHTML = `<strong>${escapeHTML(fields.interestType.value)}:</strong> ${escapeHTML(p.info)}`;
+    fields.experience.placeholder = p.prompt;
+  } else {
+    infoPanel.innerHTML = "";
+    fields.experience.placeholder = "";
+  }
+});
+
+// Input: live character counter.
+fields.shortMsg.addEventListener("input", () => {
+  const len = fields.shortMsg.value.length;
+  counter.textContent = `${len} / ${MAX_CHARS}`;
+  counter.style.color = len > MAX_CHARS ? "#b00020" : "";
+});
+
+// Prevent past dates in the picker as well.
+fields.availability.min = todayString();
+
+// Validate on blur; once a field shows an error, re-check as the user types
+// so they can fix it without restarting the form.
+Object.keys(fields).forEach((name) => {
+  const field = fields[name];
+  field.addEventListener("blur", () => validateField(name));
+  const liveEvent = field.tagName === "SELECT" ? "change" : "input";
+  field.addEventListener(liveEvent, () => {
+    if (field.classList.contains("invalid")) validateField(name);
+  });
+});
